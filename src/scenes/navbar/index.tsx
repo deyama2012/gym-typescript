@@ -24,22 +24,22 @@ const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
                 <Link
                   page="Home"
                   selectedPage={selectedPage}
-                  setSelectedPage={selectedPage}
+                  setSelectedPage={setSelectedPage}
                 />
                 <Link
                   page="Benefits"
                   selectedPage={selectedPage}
-                  setSelectedPage={selectedPage}
+                  setSelectedPage={setSelectedPage}
                 />
                 <Link
                   page="Our Classes"
                   selectedPage={selectedPage}
-                  setSelectedPage={selectedPage}
+                  setSelectedPage={setSelectedPage}
                 />
                 <Link
                   page="Contact Us"
                   selectedPage={selectedPage}
-                  setSelectedPage={selectedPage}
+                  setSelectedPage={setSelectedPage}
                 />
               </div>
               <div className={`${flexBetween} gap-8`}>
