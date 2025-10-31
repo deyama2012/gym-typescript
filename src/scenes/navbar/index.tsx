@@ -31,28 +31,11 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
             {isAboveMediumScreens ? (
               // DESKTOP
               <div className={`${flexBetween} w-full`}>
-                <div className={`${flexBetween} gap-8 text-sm`}>
-                  <Link
-                    page="Home"
-                    selectedPage={selectedPage}
-                    setSelectedPage={setSelectedPage}
-                  />
-                  <Link
-                    page="Benefits"
-                    selectedPage={selectedPage}
-                    setSelectedPage={setSelectedPage}
-                  />
-                  <Link
-                    page="Our Classes"
-                    selectedPage={selectedPage}
-                    setSelectedPage={setSelectedPage}
-                  />
-                  <Link
-                    page="Contact Us"
-                    selectedPage={selectedPage}
-                    setSelectedPage={setSelectedPage}
-                  />
-                </div>
+                <NavLinks
+                  className={`${flexBetween} gap-8 text-sm`}
+                  selectedPage={selectedPage}
+                  setSelectedPage={setSelectedPage}
+                />
                 <div className={`${flexBetween} gap-8`}>
                   <p>Sign In</p>
                   <ActionButton setSelectedPage={setSelectedPage}>
@@ -86,32 +69,51 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
               <XMarkIcon className="h-6 w-6 text-gray-400" />
             </button>
           </div>
-
-          <div className="ml-[33%] flex flex-col gap-10 text-2xl">
-            <Link
-              page="Home"
-              selectedPage={selectedPage}
-              setSelectedPage={setSelectedPage}
-            />
-            <Link
-              page="Benefits"
-              selectedPage={selectedPage}
-              setSelectedPage={setSelectedPage}
-            />
-            <Link
-              page="Our Classes"
-              selectedPage={selectedPage}
-              setSelectedPage={setSelectedPage}
-            />
-            <Link
-              page="Contact Us"
-              selectedPage={selectedPage}
-              setSelectedPage={setSelectedPage}
-            />
-          </div>
+          <NavLinks
+            className="ml-[33%] flex flex-col gap-10 text-2xl"
+            selectedPage={selectedPage}
+            setSelectedPage={setSelectedPage}
+          />
         </div>
       )}
     </nav>
+  );
+};
+
+type NavLinksProps = {
+  className: string;
+  selectedPage: string;
+  setSelectedPage: (value: string) => void;
+};
+
+const NavLinks = ({
+  className,
+  selectedPage,
+  setSelectedPage,
+}: NavLinksProps) => {
+  return (
+    <div className={className}>
+      <Link
+        page="Home"
+        selectedPage={selectedPage}
+        setSelectedPage={setSelectedPage}
+      />
+      <Link
+        page="Benefits"
+        selectedPage={selectedPage}
+        setSelectedPage={setSelectedPage}
+      />
+      <Link
+        page="Our Classes"
+        selectedPage={selectedPage}
+        setSelectedPage={setSelectedPage}
+      />
+      <Link
+        page="Contact Us"
+        selectedPage={selectedPage}
+        setSelectedPage={setSelectedPage}
+      />
+    </div>
   );
 };
 
